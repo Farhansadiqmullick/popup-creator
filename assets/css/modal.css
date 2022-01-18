@@ -1,0 +1,215 @@
+.modal-content {
+    background-color: transparent;
+    padding: 0px;
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+}
+
+.plainmodal .plainmodal-overlay{
+    width:200%;
+    height:200%;
+}
+
+.close-button {
+    position: relative;
+    right: calc(-55% - 0px);
+    top: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    
+}
+
+.image-box{
+    width: 500px;
+    height: 500px;
+}
+
+@media only screen and (max-width: 600px){
+    .image-box{
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
+}    
+
+
+/*
+Jitsi Meet CSS
+*/
+
+.jitsi-promo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    left: 0;
+    backdrop-filter: blur(1px);
+    z-index: 100000;
+}
+.jitsi-promo.hidden {
+    display: none;
+} 
+ .jitsi-promo-inner {
+position: relative;
+background: #000;
+padding: 25px;
+text-align: center;
+border-radius: 10px;
+border: 1px solid;
+margin-top: 100px;
+width: 400px;
+opacity: 0.9;   
+}
+
+.jitsi-promo-inner .close-promo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 12px;
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    cursor: pointer;
+}
+.jitsi-promo-inner h3 {
+    color: #fff;
+}
+.jitsi-promo-inner .promo-img {
+    width: 250px;
+    position: absolute;
+    top: -115px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 50%;
+}
+.jitsi-promo-inner .limited-title {
+    font-size: 24px;
+}
+.jitsi-promo-inner img.discount {
+    width: 100%;
+    margin: 0 0 10px;
+}
+.jitsi-promo-inner .discount {
+    position: relative;
+    margin: 35px 0 10px;
+}
+.jitsi-promo-inner .discount .discount-special {
+    color: #ff631a;
+    position: absolute;
+    font-size: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -24px;
+    background: #000;
+    z-index: 12;
+    padding: 5px;
+}
+.jitsi-promo-inner .discount .discount-text {
+    border: 2px solid #ff631a;
+    display: inline-block;
+    font-size: 48px;
+    padding: 20px 20px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+.jitsi-promo-inner a {
+    display: block;
+    max-width: 180px;
+    margin: 0 auto;
+    background: #ff631a;
+    color: #fff;
+    padding: 20px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.jitsi-promo-inner .black-friday-wrap h3 {
+    color: #ff631a;
+    font-size: 25px;
+    margin: 30px;
+}
+.jitsi-promo-inner .promo-title {
+    margin-top: 40px;
+}
+.jitsi-promo-inner.black-friday .promo-title {
+    margin-top: 120px;
+}
+.jitsi-promo .ribbon {
+    margin-left: -50px;
+    width: 527px;
+    position: absolute;
+    text-align: center;
+    font-size: 23px !important;
+    background: #ddd;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+.jitsi-promo .ribbon h1 {
+    font-size: 38px !important;
+    font-weight: bold;
+    color: #000;
+    text-shadow: #240c0c 0 1px 0;
+    margin: 0;
+    padding: 10px;
+}
+.jitsi-promo .ribbon:before, .jitsi-promo .ribbon:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.5em solid #ddd;
+    z-index: -1;
+}
+.jitsi-promo .ribbon:before {
+    left: -2em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+}
+.jitsi-promo .ribbon:after {
+    right: -2em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.4) -1px 1px 1px;
+}
+.jitsi-promo .ribbon .ribbon-content:before, .jitsi-promo .ribbon .ribbon-content:after {
+    border-color: #7d7d7d transparent transparent transparent;
+    position: absolute;
+    display: block;
+    border-style: solid;
+    bottom: -1em;
+    content: '';
+}
+.jitsi-promo .ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+}
+.jitsi-promo .ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+}
+.jitsi-promo .ribbon-stitches-top {
+    margin-top: 2px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+.jitsi-promo .ribbon-stitches-bottom {
+    margin-bottom: 2px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
+}
+.jitsi-promo.jitsi-promo-fullpage {
+    position: fixed;
+}
