@@ -39,8 +39,12 @@ window.addEventListener('DOMContentLoaded', function () {
         //set the time for never ending
         let countDate = dateItem.dataset.countdown;
         let tempDay = tempDate.getDate();
+        let today = new Date().getTime();
         if (countDate > tempDay) {
             let countTime = new Date(tempYear, tempMonth, tempDay + (countDate - tempDay), 10, 11, 0);
+            return countTime;
+        } else if (today > tempDay) {
+            let countTime = new Date(tempYear, tempMonth, tempDay + 3, 10, 11, 0);
             return countTime;
         } else {
             let countTime = new Date(tempYear, tempMonth, tempDay + 3, 10, 11, 0);
@@ -102,7 +106,8 @@ window.addEventListener('DOMContentLoaded', function () {
             item.innerHTML = values[index]
         });
         if (exceedTime < 0) {
-            clearInterval(countdown);
+            countTimer();
+            // clearInterval(countdown);
             // deadline.innerHTML = `<h4>sorry! the giveaway has expired!</h4>`;
         }
     }
