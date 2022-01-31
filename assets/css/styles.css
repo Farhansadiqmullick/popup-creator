@@ -127,3 +127,11 @@ Custom CSS
   max-width:100px;
   margin: 0 auto;
 }
+
+.close-promo{
+  cursor: pointer;
+  font-size: 50px !important;
+  position: absolute;
+  top: calc(46%);
+  right: calc(21%);
+}

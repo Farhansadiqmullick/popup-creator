@@ -4,6 +4,7 @@
     max-width: 500px;
     text-align: center;
     display: flex;
+    margin-top: -100px;
 }
 
 .plainmodal .plainmodal-overlay{
@@ -13,12 +14,11 @@
 
 .close-button {
     position: relative;
-    right: calc(-55% - 0px);
-    top: 0px;
+    right: calc(-55% - 195px);
+    top: 30px;
     cursor: pointer;
     background-color: transparent;
-    
-}
+  }
 
 .image-box{
     width: 500px;

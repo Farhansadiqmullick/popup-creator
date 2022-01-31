@@ -92,6 +92,7 @@ class PopupCreator
 		while ($query->have_posts()) {
 			$query->the_post();
 			$size  = get_post_meta(get_the_ID(), 'popupcreator_popup_size', true);
+			$popupDisplay = get_post_meta(get_the_ID(), 'popupcreator_display', true);
 			$backgroundColor = get_post_meta(get_the_ID(), 'popupcreator_background_color', true);
 			$exit  = get_post_meta(get_the_ID(), 'popupcreator_on_exit', true);
 			$promoTitle = get_post_meta(get_the_ID(), 'popupcreator_promo_text', true);
@@ -103,6 +104,7 @@ class PopupCreator
 			$buttonTxt  = get_post_meta(get_the_ID(), 'popupcreator_button_text', true);
 			$promoUrl  = get_post_meta(get_the_ID(), 'popupcreator_url', true);
 			$dateTime  = get_post_meta(get_the_ID(), 'popupcreator_date_field', true);
+			$close_button_height = get_post_meta(get_the_ID(), 'close_button_field', true);
 			//$dateTime = substr($dateTime, 4, 2);
 			$delay = get_post_meta(get_the_ID(), 'popupcreator_display_after', true);
 			if ($delay > 0) {
@@ -112,10 +114,12 @@ class PopupCreator
 			}
 			$backgroundImage = get_the_post_thumbnail_url(get_the_ID(), $size);
 			$promoImage = wp_get_attachment_image_src($promoImage);
+			
 
 ?>
 
 			<div class="modal-content" data-modal-id="<?php the_ID(); ?>" data-size="<?php echo esc_attr($size); ?>" data-exit="<?php echo esc_attr($exit); ?>" data-delay="<?php echo esc_attr($delay); ?>">
+			<?php if($popupDisplay == 1): ?>
 				<div class="jitsi-promo-inner" style="background-color:<?php echo $backgroundColor ?? '#000'; ?> ">
 					<span class="close-promo">&times;</span>
 					<img src="<?php echo esc_url($backgroundImage); ?>" class="promo-img">
@@ -162,8 +166,13 @@ class PopupCreator
 					</div>
 					<a href="<?php echo $promoUrl; ?>" target="_blank"><?php echo $buttonTxt; ?></a>
 				</div>
+		<?php elseif($popupDisplay == 0): ?>
+
+				<div class="image-box scroll"><span style="top:calc(<?php echo $close_button_height; ?>%); " class="close-promo">&times;</span>
+				<a target="_blank" href="<?php echo $promoUrl; ?>"><img src="<?php echo $backgroundImage; ?>" alt="Popup"></a>
+				</div>
 			</div>
-<?php
+<?php endif;
 		}
 		wp_reset_query();
 	}
